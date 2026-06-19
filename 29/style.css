@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f1123; /* Fundo escuro para dar destaque ao gradiente */
+}
+
+.container {
+    text-align: center;
+}
+
+.gradient-text {
+    font-size: 100px; /* Texto grande e marcante como no vídeo */
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    /* Configuração do Gradiente de Fundo */
+    background: linear-gradient(45deg, #ff0055, #f300ff, #00d2ff, #ff0055);
+    background-size: 400% 400%;
+    
+    /* O truque do vídeo: Recorta o fundo no formato do texto e deixa o preenchimento invisível */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Animação para fazer as cores se moverem sozinhos */
+    animation: flowGradient 8s ease infinite;
+}
+
+/* Regra que move a posição do background para criar o efeito dinâmico */
+@keyframes flowGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
